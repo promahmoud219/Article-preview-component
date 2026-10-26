@@ -45,9 +45,10 @@ main {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
-  padding: 48px 24px;
+  padding: 48px 0;
 }
 main .card {
+  border: 1px solid green;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,18 +57,33 @@ main .card {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 32px;
-  padding-bottom: 16px;
-  width: 100%;
+  width: min(100% - 48px, 400px);
   max-width: 730px;
   overflow: hidden;
   background: var(--color-white);
   border-radius: 10px;
 }
+@media (min-width: 48rem) {
+  main .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: min(100% - 80px, 608px);
+    gap: 0;
+  }
+}
 main .card__img {
-  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (min-width: 48rem) {
+  main .card__img {
+    width: 37.5%;
+  }
 }
 main .card__body {
   display: -webkit-box;
@@ -79,6 +95,11 @@ main .card__body {
           flex-direction: column;
   gap: 48px;
   padding: 0 32px;
+}
+@media (min-width: 48rem) {
+  main .card__body {
+    padding: 47px 40px 40px 32px;
+  }
 }
 main .card__content {
   display: -webkit-box;
@@ -117,6 +138,12 @@ main .card .card-footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-bottom: 16px;
+}
+@media (min-width: 48rem) {
+  main .card .card-footer {
+    padding-bottom: 0;
+  }
 }
 main .card .card-footer__profile {
   display: -webkit-box;
