@@ -41,6 +41,11 @@ main{
             width: min(calc(100% - 80px), 608px);
             gap: 0;
         }       
+
+        @media (min-width: $breakpoint-desktop) {
+            flex-direction: row;
+            width: min(calc(100% - 80px), 730px); 
+        }       
         
         &__img{
             object-fit: cover;
@@ -60,6 +65,9 @@ main{
             padding: 0 32px;
             @media (min-width: $breakpoint-tablet) {
                 padding: 47px 40px 40px 32px;
+            }
+            @media (min-width: $breakpoint-desktop) {
+                padding: 36px 43px 43px 40px;
             }
         }
         

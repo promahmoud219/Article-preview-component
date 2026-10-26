@@ -73,6 +73,15 @@ main .card {
     gap: 0;
   }
 }
+@media (min-width: 90rem) {
+  main .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: min(100% - 80px, 730px);
+  }
+}
 main .card__img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -99,6 +108,11 @@ main .card__body {
 @media (min-width: 48rem) {
   main .card__body {
     padding: 47px 40px 40px 32px;
+  }
+}
+@media (min-width: 90rem) {
+  main .card__body {
+    padding: 36px 43px 43px 40px;
   }
 }
 main .card__content {
