@@ -44,7 +44,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  min-height: 100vh;
+  padding: 48px 24px;
 }
 main .card {
   display: -webkit-box;
@@ -55,10 +56,12 @@ main .card {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 32px;
-  background: var(--color-white);
-  margin: 0 24px;
-  border-radius: 10px;
+  padding-bottom: 16px;
+  width: 100%;
+  max-width: 730px;
   overflow: hidden;
+  background: var(--color-white);
+  border-radius: 10px;
 }
 main .card__img {
   width: 100%;
@@ -102,16 +105,29 @@ main .card__description {
   letter-spacing: 0.12%;
   font-weight: 500;
   color: var(--color-grey-500);
+  width: 100%;
 }
 main .card .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 64px;
-  background: darkcyan;
+}
+main .card .card-footer__profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+}
+main .card .card-footer__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 main .card .card-footer__name {
   font-family: "Manrope", sans-serif;
@@ -126,6 +142,15 @@ main .card .card-footer__date {
   font-size: 0.8125rem;
   line-height: 1.4;
   letter-spacing: 0.12%;
-  font-weight: 700;
-  color: var(--color-grey-900);
+  font-weight: 500;
+  color: var(--color-grey-400);
+}
+main .card .card-footer__share-button {
+  background: var(--color-grey-200);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
