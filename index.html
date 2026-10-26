@@ -37,12 +37,39 @@
             <img src="./images/avatar-michelle.jpg" alt="" class="card-footer__img">
             <div class="card-footer__name-and-date">
               <p class="card-footer__name">Michelle Appleton</p>
-              <date class="card-footer__date">28 Jun 2020</date>
+              <time class="card-footer__date" datetime="2020-06-28">28 Jun 2020</time>
             </div>
           </div>
-          <button class="card-footer__share-button button">
+
+          <button 
+            class="card-footer__share-button button"
+            aria-label="Share article"
+          >
             <img src="./images/icon-share.svg" alt="">
           </button>
+
+          <div class="share-menu" id="share-menu" hidden>
+            <div class="share-menu__label">SHARE</div>
+            <div class="share-menu__icons">
+              <a href="" aria-label="Share on Facebook">
+                <img src="./images/icon-facebook.svg" alt="">
+              </a>
+              <a href="" aria-label="Share on Twitter">
+                <img src="./images/icon-twitter.svg" alt="">
+              </a>
+              <a href="" aria-label="Share on Pinterest">
+                <img src="./images/icon-pinterest.svg" alt="">
+              </a>
+            </div>
+            <button 
+              class="share-menu__close"
+              aria-label="Close share menu"
+            >
+              <img src="./images/icon-share.svg" alt="">
+            </button>
+          </div>
+
+
         </div>      
       </div>
     </article>
