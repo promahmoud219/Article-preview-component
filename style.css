@@ -1,0 +1,131 @@
+:root {
+  --spacing-0: 0;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-700: 3.5rem;
+  --spacing-800: 4rem;
+  --spacing-1300: 6.5rem;
+  --spacing-2000: 10rem;
+}
+
+:root {
+  --color-grey-900: #48556A;
+  --color-grey-500: #6E8098;
+  --color-grey-400: #9DAEC2;
+  --color-grey-200: #ECF2F8;
+  --color-white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: var(--color-grey-200);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+main .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  background: var(--color-white);
+  margin: 0 24px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+main .card__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+main .card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 48px;
+  padding: 0 32px;
+}
+main .card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+main .card__title {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: 0.25px;
+  font-weight: 700;
+  color: var(--color-grey-900);
+}
+main .card__description {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.12%;
+  font-weight: 500;
+  color: var(--color-grey-500);
+}
+main .card .card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 64px;
+  background: darkcyan;
+}
+main .card .card-footer__name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.12%;
+  font-weight: 700;
+  color: var(--color-grey-900);
+}
+main .card .card-footer__date {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.12%;
+  font-weight: 700;
+  color: var(--color-grey-900);
+}

@@ -1,0 +1,48 @@
+@use "sass:map";
+
+$font-manrope: "Manrope", sans-serif;
+
+$text-presets: (
+    1: (
+        font-family: $font-manrope,
+        font-size: 1.25rem,
+        line-height: 1.3,
+        letter-spacing: 0.25px,
+        font-weight: 700
+    ),
+    2-medium: (
+        font-family: $font-manrope,
+        font-size: 0.8125rem,
+        line-height: 1.4,
+        letter-spacing: 0.12%,
+        font-weight: 500
+    ),
+    2-bold: (
+        font-family: $font-manrope,
+        font-size: 0.8125rem,
+        line-height: 1.4,
+        letter-spacing: 0.12%,
+        font-weight: 700
+    ),
+    3: (
+        font-family: $font-manrope,
+        font-size: 0.8125rem,
+        line-height: 1.4,
+        letter-spacing: 0.25em,
+        font-weight: 400
+    )
+);
+
+@mixin text-preset($preset) {
+    $config: map.get($text-presets, $preset);
+
+    @if ($config == null) {
+        @error "Unknown text preset: #{$preset}";
+    }
+
+    font-family: map.get($config, font-family);
+    font-size: map.get($config, font-size);
+    line-height: map.get($config, line-height);
+    letter-spacing: map.get($config, letter-spacing);
+    font-weight: map.get($config, font-weight);
+}
