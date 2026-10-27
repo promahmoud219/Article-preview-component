@@ -6,7 +6,6 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-
   
   <!-- FONT  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +31,7 @@
             to help you make any room feel complete.
           </p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="card-footer">
           <div class="card-footer__profile">
             <img src="./images/avatar-michelle.jpg" alt="" class="card-footer__img">
             <div class="card-footer__name-and-date">
@@ -44,26 +43,33 @@
           <button 
             class="card-footer__share-button button"
             aria-label="Share article"
+            aria-controls="share-menu"
+            type="button"
+            
           >
             <img src="./images/icon-share.svg" alt="">
           </button>
 
           <div class="share-menu" id="share-menu" hidden>
-            <div class="share-menu__label">SHARE</div>
-            <div class="share-menu__icons">
-              <a href="" aria-label="Share on Facebook">
-                <img src="./images/icon-facebook.svg" alt="">
-              </a>
-              <a href="" aria-label="Share on Twitter">
-                <img src="./images/icon-twitter.svg" alt="">
-              </a>
-              <a href="" aria-label="Share on Pinterest">
-                <img src="./images/icon-pinterest.svg" alt="">
-              </a>
+            <div class="share-menu__label-and-icons">
+              <div class="share-menu__label">SHARE</div>
+              <div class="share-menu__icons">
+                <a href="" aria-label="Share on Facebook">
+                  <img src="./images/icon-facebook.svg" alt="">
+                </a>
+                <a href="" aria-label="Share on Twitter">
+                  <img src="./images/icon-twitter.svg" alt="">
+                </a>
+                <a href="" aria-label="Share on Pinterest">
+                  <img src="./images/icon-pinterest.svg" alt="">
+                </a>
+              </div>
             </div>
             <button 
               class="share-menu__close"
               aria-label="Close share menu"
+              aria-expanded="false"
+              type="button"
             >
               <img src="./images/icon-share.svg" alt="">
             </button>
@@ -74,5 +80,8 @@
       </div>
     </article>
   </main>
+  <script src="./script.js"></script>
 </body>
 </html>
+
+

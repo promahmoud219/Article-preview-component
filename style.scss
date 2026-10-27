@@ -24,11 +24,9 @@ main{
     min-height: 100vh;
     padding: 48px 0;
     
-    .card{
-        border: 1px solid green;
+    .card{ 
         display: flex;
         flex-direction: column;
-        gap: 32px;
         width: min(calc(100% - 48px), 400px);
         max-width: 730px;        
         
@@ -38,8 +36,7 @@ main{
        
         @media (min-width: $breakpoint-tablet) {
             flex-direction: row;
-            width: min(calc(100% - 80px), 608px);
-            gap: 0;
+            width: min(calc(100% - 80px), 608px); 
         }       
 
         @media (min-width: $breakpoint-desktop) {
@@ -51,21 +48,24 @@ main{
             object-fit: cover;
             width: 100%;
             flex-shrink: 0;
-
+            height: 200px;
+           
             @media (min-width: $breakpoint-tablet) {
                 width: 37.5%;  
             } 
         }
         
-        &__body{
-            
+        &__body{ 
             display: flex;
             flex-direction: column;
             gap: 48px;
-            padding: 0 32px;
+            padding: 32px;
+            padding-bottom: 16px;
+
             @media (min-width: $breakpoint-tablet) {
                 padding: 47px 40px 40px 32px;
             }
+            
             @media (min-width: $breakpoint-desktop) {
                 padding: 36px 43px 43px 40px;
             }
@@ -90,9 +90,10 @@ main{
         
         .card-footer{
             display: flex;  
-            align-items: center; 
             justify-content: space-between; 
-            padding-bottom: 16px;
+            align-items: center; 
+            position: relative;
+            height: 40px;
             
             @media (min-width: $breakpoint-tablet) {
                 padding-bottom: 0;    
@@ -129,6 +130,63 @@ main{
                 flex-shrink: 0;
             }
 
+            .share-menu{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: var(--color-grey-900);
+                width: calc(100% + 64px);
+                left: -32px;
+                bottom: -24px;
+                padding: 24px 32px;
+                position: absolute; 
+
+                @media (min-width: $breakpoint-tablet) {
+                    background: red;
+                }                
+
+                &__label-and-icons{
+                    display: flex;
+                    gap: 24px;
+                    align-items: center;
+                }
+
+                &__label{
+                    @include text-preset(3);
+                    color: var(--color-grey-400);
+                }
+                
+                &__icons{
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                }
+
+                &__close{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    border: none; 
+                    background: var(--color-grey-500);
+
+                    img{
+                        width: 15px;
+                        height: 13px;
+                        filter: brightness(0) invert(1);
+                    }
+                }
+                
+                &__icons img{
+                    color: var(--color-white);
+                    width: 20px;
+                    height: 20px;
+                    filter: brightness(0) invert(1);
+                }
+            }
         }
     }
+}
+
+[hidden] {
+    display: none !important;
 }
