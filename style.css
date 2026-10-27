@@ -26,6 +26,10 @@
           box-sizing: border-box;
 }
 
+button, a {
+  cursor: pointer;
+}
+
 body {
   background: var(--color-grey-200);
 }
@@ -211,11 +215,6 @@ main .card .card-footer .share-menu {
   bottom: -24px;
   padding: 24px 32px;
   position: absolute;
-}
-@media (min-width: 48rem) {
-  main .card .card-footer .share-menu {
-    background: red;
-  }
 }
 main .card .card-footer .share-menu__label-and-icons {
   display: -webkit-box;

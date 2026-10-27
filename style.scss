@@ -11,6 +11,9 @@
     box-sizing: border-box;
 }
 
+button, a {
+    cursor: pointer;
+}
 body{
     background: var(--color-grey-200);
 }
@@ -142,7 +145,6 @@ main{
                 position: absolute; 
 
                 @media (min-width: $breakpoint-tablet) {
-                    background: red;
                 }                
 
                 &__label-and-icons{
@@ -190,3 +192,4 @@ main{
 [hidden] {
     display: none !important;
 }
+
