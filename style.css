@@ -62,10 +62,10 @@ main .card {
           flex-direction: column;
   width: min(100% - 48px, 400px);
   max-width: 730px;
+  overflow: hidden;
   z-index: 0;
   background: var(--color-white);
   border-radius: 10px;
-  border: 1px solid red;
 }
 @media (min-width: 48rem) {
   main .card {
@@ -74,7 +74,7 @@ main .card {
         -ms-flex-direction: row;
             flex-direction: row;
     height: 346px;
-    width: min(100% - 80px, 608px);
+    width: 608px;
     overflow: visible;
   }
 }
@@ -84,7 +84,8 @@ main .card {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    width: min(100% - 80px, 730px);
+    width: 730px;
+    height: 280px;
   }
 }
 main .card__img {
@@ -94,11 +95,18 @@ main .card__img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   height: 200px;
-  border: 1px solid cyan;
 }
 @media (min-width: 48rem) {
   main .card__img {
-    width: 37.5%;
+    width: 229px;
+    height: 100%;
+    border: 1px solid red;
+  }
+}
+@media (min-width: 90rem) {
+  main .card__img {
+    width: 285px;
+    border: 1px solid orange;
     height: 100%;
   }
 }
@@ -122,7 +130,7 @@ main .card__body {
 }
 @media (min-width: 90rem) {
   main .card__body {
-    padding: 36px 43px 43px 40px;
+    padding: 32px 40px;
   }
 }
 main .card__content {
@@ -233,7 +241,7 @@ main .card .card-footer .share-menu {
   main .card .card-footer .share-menu {
     width: 248px;
     height: 55px;
-    bottom: calc(100% + 16px);
+    bottom: calc(100% + 27px);
     right: -107px;
     left: auto;
     border-radius: 10px;
@@ -259,6 +267,11 @@ main .card .card-footer .share-menu {
     border-width: 8px;
     border-style: solid;
     border-color: var(--color-grey-900) transparent transparent transparent;
+  }
+}
+@media (min-width: 90rem) {
+  main .card .card-footer .share-menu {
+    right: -110px;
   }
 }
 main .card .card-footer .share-menu__label-and-icons {
