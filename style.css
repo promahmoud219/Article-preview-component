@@ -66,6 +66,8 @@ main .card {
   z-index: 0;
   background: var(--color-white);
   border-radius: 10px;
+  -webkit-box-shadow: 20px 40px 30px 10px #DBE4ED;
+          box-shadow: 20px 40px 30px 10px #DBE4ED;
 }
 @media (min-width: 48rem) {
   main .card {
@@ -100,6 +102,8 @@ main .card__img {
   main .card__img {
     width: 229px;
     height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
   }
 }
 @media (min-width: 90rem) {
