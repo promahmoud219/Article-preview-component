@@ -37,12 +37,13 @@ main{
         background: var(--color-white);
         border-radius: 10px;
         box-shadow: 15px 30px 30px 10px #DBE4ED;
-        
+        overflow: hidden;
         
         @media (min-width: $breakpoint-tablet) {
             flex-direction: row;
             height: 346px;
             width: 608px; 
+            overflow: visible;
         }       
 
         @media (min-width: $breakpoint-desktop) {
@@ -53,22 +54,17 @@ main{
 
         &__img-container{
             width: 100%;            
-            height: 200px; 
-            border: 1px solid red;
+            height: 200px;  
             overflow: hidden;
             flex-shrink: 0;
             @media (min-width: $breakpoint-tablet) {
-                width: 229px;  
-                border: 1px solid orange;
+                width: 229px;   
                 height: 100%;
                 border-bottom-left-radius: 10px;
-                border-top-left-radius: 10px;
-
-                
+                border-top-left-radius: 10px; 
             } 
             
-            @media (min-width: $breakpoint-desktop) {
-                border: 1px solid cyan;
+            @media (min-width: $breakpoint-desktop) { 
                 width: 285px;  
                 height: 100%;
             } 
@@ -82,7 +78,6 @@ main{
 
             @media (min-width: $breakpoint-tablet) {
                 object-position: 40% center; 
-
             }
         }
         
@@ -130,7 +125,7 @@ main{
             justify-content: space-between; 
             align-items: center; 
             position: relative;
-            height: 40px;
+            height: 40px; 
 
             &__profile{ 
                 display: flex;
@@ -154,18 +149,20 @@ main{
                 color: var(--color-grey-400);
             }
             
-            & button{
+            .share-button{
                 width: 32px;
                 height: 32px;
                 border-radius: 50%;
                 border: none;
                 flex-shrink: 0;
-            }
-
-            &__share-button{
                 background: var(--color-grey-200);
+                z-index: 15;
+                transition: all .5s ease;
             }
-            .is-open{
+            
+
+            .share-button:hover, 
+            &:has(.share-menu.active) .share-button{
                 background: var(--color-grey-500);
 
                 img{
@@ -174,21 +171,31 @@ main{
                     filter: brightness(0) invert(1);
                 }
             }
-            .share-menu{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background: var(--color-grey-900);
-                width: calc(100% + 64px);
-                left: -32px;
-                bottom: -24px;
-                padding: 24px 32px;
-                position: absolute; 
 
+            .share-menu{
+                background: var(--color-grey-900);
+                
+                width: calc(100% + 64px);
+                height: 76px;
+                padding: 24px 32px;
+                
+                position: absolute; 
+                left: -32px;
+                bottom: -16px;
+
+                z-index: 5;
+                transform: translateY(100%);
+                transition: all  .5s ease;
+
+                &.active{
+                    transform: translateY(0);
+                }
+                
                 @media (min-width: $breakpoint-tablet) { 
                     width: 248px;
                     height: 55px;
-                    bottom: calc(100% + 27px);
+                    bottom: calc(0% + 27px);
+                    transform: translateY(10px);
                     right: -107px;
                     left: auto;
                     
@@ -196,9 +203,7 @@ main{
                     display: flex;
                     justify-content: center;
 
-                    button{
-                        display: none;
-                    }
+                    transform: scale(0);
                     
                     &::after{
                         position: absolute;
@@ -208,19 +213,22 @@ main{
                         top: 100%;
                         left: 50%;
                         transform: translateX(-50%); 
-
+                        
                         border-width: 8px;
                         border-style: solid;
                         border-color: var(--color-grey-900) transparent transparent transparent;
-                        
                     }
-
+                        
+                    &.active{
+                        transform: scale(1);
+                        bottom: calc(100% + 27px);
+                    }
                 }                
+                
                 @media (min-width: $breakpoint-desktop) { 
-                    right: -110px;
-                    
+                    right: -110px; 
                 }
-
+                
                 &__label-and-icons{
                     display: flex;
                     gap: 24px;
@@ -240,7 +248,7 @@ main{
 
                 &__close{
                     background: var(--color-grey-500);
-
+                    
                     img{
                         width: 15px;
                         height: 13px;
@@ -253,7 +261,7 @@ main{
                     width: 20px;
                     height: 20px;
                     filter: brightness(0) invert(1);
-                }
+                } 
             }
         }
     }

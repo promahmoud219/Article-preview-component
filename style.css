@@ -66,6 +66,7 @@ main .card {
   border-radius: 10px;
   -webkit-box-shadow: 15px 30px 30px 10px #DBE4ED;
           box-shadow: 15px 30px 30px 10px #DBE4ED;
+  overflow: hidden;
 }
 @media (min-width: 48rem) {
   main .card {
@@ -75,6 +76,7 @@ main .card {
             flex-direction: row;
     height: 346px;
     width: 608px;
+    overflow: visible;
   }
 }
 @media (min-width: 90rem) {
@@ -90,7 +92,6 @@ main .card {
 main .card__img-container {
   width: 100%;
   height: 200px;
-  border: 1px solid red;
   overflow: hidden;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -98,7 +99,6 @@ main .card__img-container {
 @media (min-width: 48rem) {
   main .card__img-container {
     width: 229px;
-    border: 1px solid orange;
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -106,7 +106,6 @@ main .card__img-container {
 }
 @media (min-width: 90rem) {
   main .card__img-container {
-    border: 1px solid cyan;
     width: 285px;
     height: 100%;
   }
@@ -219,48 +218,52 @@ main .card .card-footer__date {
   font-weight: 500;
   color: var(--color-grey-400);
 }
-main .card .card-footer button {
+main .card .card-footer .share-button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-}
-main .card .card-footer__share-button {
   background: var(--color-grey-200);
+  z-index: 15;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-main .card .card-footer .is-open {
+main .card .card-footer .share-button:hover, main .card .card-footer:has(.share-menu.active) .share-button {
   background: var(--color-grey-500);
 }
-main .card .card-footer .is-open img {
+main .card .card-footer .share-button:hover img, main .card .card-footer:has(.share-menu.active) .share-button img {
   width: 15px;
   height: 13px;
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
 main .card .card-footer .share-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background: var(--color-grey-900);
   width: calc(100% + 64px);
-  left: -32px;
-  bottom: -24px;
+  height: 76px;
   padding: 24px 32px;
   position: absolute;
+  left: -32px;
+  bottom: -16px;
+  z-index: 5;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+main .card .card-footer .share-menu.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 @media (min-width: 48rem) {
   main .card .card-footer .share-menu {
     width: 248px;
     height: 55px;
-    bottom: calc(100% + 27px);
+    bottom: calc(0% + 27px);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
     right: -107px;
     left: auto;
     border-radius: 10px;
@@ -270,9 +273,8 @@ main .card .card-footer .share-menu {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  main .card .card-footer .share-menu button {
-    display: none;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   main .card .card-footer .share-menu::after {
     position: absolute;
@@ -286,6 +288,11 @@ main .card .card-footer .share-menu {
     border-width: 8px;
     border-style: solid;
     border-color: var(--color-grey-900) transparent transparent transparent;
+  }
+  main .card .card-footer .share-menu.active {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    bottom: calc(100% + 27px);
   }
 }
 @media (min-width: 90rem) {
