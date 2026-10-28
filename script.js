@@ -4,16 +4,22 @@ const cardFooterProfile = document.querySelector(".card-footer__profile");
 const shareMenu = document.getElementById("share-menu");
 
 
-openShareMenuBtn.addEventListener("click", openShareMenu);
+openShareMenuBtn.addEventListener("click", () => {
+        shareMenu.hidden ? openShareMenu() : closeShareMenu();
+    }
+);
+
 closeShareMenuBtn.addEventListener("click", closeShareMenu);
 
 function openShareMenu(){
-    shareMenu.removeAttribute('hidden');    
-    cardFooterProfile.setAttribute("hidden", "");
+    shareMenu.hidden = false;    
+    openShareMenuBtn.setAttribute("aria-expanded", "true");
+    openShareMenuBtn.classList.add('is-open');
 }
 
 
 function closeShareMenu(){
-    shareMenu.setAttribute('hidden', "");    
-    cardFooterProfile.removeAttribute("hidden");
+    shareMenu.hidden = true;    
+    openShareMenuBtn.setAttribute("aria-expanded", "fasle");
+    openShareMenuBtn.classList.remove('is-open');
 }

@@ -13,6 +13,7 @@
 
 button, a {
     cursor: pointer;
+    border: none;
 }
 body{
     background: var(--color-grey-200);
@@ -33,13 +34,18 @@ main{
         width: min(calc(100% - 48px), 400px);
         max-width: 730px;        
         
-        overflow: hidden;
+        // overflow: hidden;
+        z-index: 0;
+
         background: var(--color-white);
         border-radius: 10px;
-       
+        border: 1px solid red;
+
         @media (min-width: $breakpoint-tablet) {
             flex-direction: row;
+            height: 346px;
             width: min(calc(100% - 80px), 608px); 
+            overflow: visible;
         }       
 
         @media (min-width: $breakpoint-desktop) {
@@ -52,9 +58,12 @@ main{
             width: 100%;
             flex-shrink: 0;
             height: 200px;
-           
+            border: 1px solid cyan;
+            
             @media (min-width: $breakpoint-tablet) {
                 width: 37.5%;  
+                // height: 346px;
+                height: 100%;
             } 
         }
         
@@ -67,6 +76,7 @@ main{
 
             @media (min-width: $breakpoint-tablet) {
                 padding: 47px 40px 40px 32px;
+                gap: 24px;
             }
             
             @media (min-width: $breakpoint-desktop) {
@@ -99,7 +109,7 @@ main{
             height: 40px;
             
             @media (min-width: $breakpoint-tablet) {
-                padding-bottom: 0;    
+                // padding-bottom: 0;    
             }
 
             &__profile{ 
@@ -123,9 +133,8 @@ main{
                 @include text-preset(2-medium);
                 color: var(--color-grey-400);
             }
-
-            &__share-button{
-                background: var(--color-grey-200);
+            
+            & button{
                 width: 32px;
                 height: 32px;
                 border-radius: 50%;
@@ -133,6 +142,18 @@ main{
                 flex-shrink: 0;
             }
 
+            &__share-button{
+                background: var(--color-grey-200);
+            }
+            .is-open{
+                background: var(--color-grey-500);
+
+                img{
+                    width: 15px;
+                    height: 13px;
+                    filter: brightness(0) invert(1);
+                }
+            }
             .share-menu{
                 display: flex;
                 justify-content: space-between;
@@ -144,7 +165,36 @@ main{
                 padding: 24px 32px;
                 position: absolute; 
 
-                @media (min-width: $breakpoint-tablet) {
+                @media (min-width: $breakpoint-tablet) { 
+                    width: 248px;
+                    height: 55px;
+                    bottom: calc(100% + 16px);
+                    right: -107px;
+                    left: auto;
+                    
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+
+                    button{
+                        display: none;
+                    }
+
+                    &::after{
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        content: '';
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%); 
+
+                        border-width: 8px;
+                        border-style: solid;
+                        border-color: var(--color-grey-900) transparent transparent transparent;
+                        
+                    }
+
                 }                
 
                 &__label-and-icons{
@@ -165,10 +215,6 @@ main{
                 }
 
                 &__close{
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50%;
-                    border: none; 
                     background: var(--color-grey-500);
 
                     img{

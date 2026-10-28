@@ -28,6 +28,7 @@
 
 button, a {
   cursor: pointer;
+  border: none;
 }
 
 body {
@@ -61,9 +62,10 @@ main .card {
           flex-direction: column;
   width: min(100% - 48px, 400px);
   max-width: 730px;
-  overflow: hidden;
+  z-index: 0;
   background: var(--color-white);
   border-radius: 10px;
+  border: 1px solid red;
 }
 @media (min-width: 48rem) {
   main .card {
@@ -71,7 +73,9 @@ main .card {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    height: 346px;
     width: min(100% - 80px, 608px);
+    overflow: visible;
   }
 }
 @media (min-width: 90rem) {
@@ -90,10 +94,12 @@ main .card__img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   height: 200px;
+  border: 1px solid cyan;
 }
 @media (min-width: 48rem) {
   main .card__img {
     width: 37.5%;
+    height: 100%;
   }
 }
 main .card__body {
@@ -111,6 +117,7 @@ main .card__body {
 @media (min-width: 48rem) {
   main .card__body {
     padding: 47px 40px 40px 32px;
+    gap: 24px;
   }
 }
 @media (min-width: 90rem) {
@@ -158,11 +165,6 @@ main .card .card-footer {
   position: relative;
   height: 40px;
 }
-@media (min-width: 48rem) {
-  main .card .card-footer {
-    padding-bottom: 0;
-  }
-}
 main .card .card-footer__profile {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,14 +192,25 @@ main .card .card-footer__date {
   font-weight: 500;
   color: var(--color-grey-400);
 }
-main .card .card-footer__share-button {
-  background: var(--color-grey-200);
+main .card .card-footer button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+main .card .card-footer__share-button {
+  background: var(--color-grey-200);
+}
+main .card .card-footer .is-open {
+  background: var(--color-grey-500);
+}
+main .card .card-footer .is-open img {
+  width: 15px;
+  height: 13px;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
 }
 main .card .card-footer .share-menu {
   display: -webkit-box;
@@ -215,6 +228,38 @@ main .card .card-footer .share-menu {
   bottom: -24px;
   padding: 24px 32px;
   position: absolute;
+}
+@media (min-width: 48rem) {
+  main .card .card-footer .share-menu {
+    width: 248px;
+    height: 55px;
+    bottom: calc(100% + 16px);
+    right: -107px;
+    left: auto;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .card .card-footer .share-menu button {
+    display: none;
+  }
+  main .card .card-footer .share-menu::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: "";
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--color-grey-900) transparent transparent transparent;
+  }
 }
 main .card .card-footer .share-menu__label-and-icons {
   display: -webkit-box;
@@ -243,10 +288,6 @@ main .card .card-footer .share-menu__icons {
   gap: 16px;
 }
 main .card .card-footer .share-menu__close {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
   background: var(--color-grey-500);
 }
 main .card .card-footer .share-menu__close img {
