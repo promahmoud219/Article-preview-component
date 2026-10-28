@@ -39,7 +39,7 @@ main{
 
         background: var(--color-white);
         border-radius: 10px;
-        box-shadow: 20px 40px 30px 10px #DBE4ED;
+        box-shadow: 15px 30px 30px 10px #DBE4ED;
 
         @media (min-width: $breakpoint-tablet) {
             flex-direction: row;
