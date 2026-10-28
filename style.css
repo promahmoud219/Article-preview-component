@@ -100,13 +100,11 @@ main .card__img {
   main .card__img {
     width: 229px;
     height: 100%;
-    border: 1px solid red;
   }
 }
 @media (min-width: 90rem) {
   main .card__img {
     width: 285px;
-    border: 1px solid orange;
     height: 100%;
   }
 }

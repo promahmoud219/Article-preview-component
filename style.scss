@@ -62,12 +62,10 @@ main{
             @media (min-width: $breakpoint-tablet) {
                 width: 229px;  
                 height: 100%;
-                border: 1px solid red;
             } 
             
             @media (min-width: $breakpoint-desktop) {
                 width: 285px;  
-                border: 1px solid orange;
                 height: 100%;
             } 
         }
@@ -113,10 +111,6 @@ main{
             align-items: center; 
             position: relative;
             height: 40px;
-            // border: 1px solid red;
-            @media (min-width: $breakpoint-tablet) {
-                // padding-bottom: 0;    
-            }
 
             &__profile{ 
                 display: flex;
@@ -170,8 +164,7 @@ main{
                 bottom: -24px;
                 padding: 24px 32px;
                 position: absolute; 
-                // background: transparent;
-                // border: 1px solid cyan;
+
                 @media (min-width: $breakpoint-tablet) { 
                     width: 248px;
                     height: 55px;
