@@ -34,18 +34,15 @@ main{
         width: min(calc(100% - 48px), 400px);
         max-width: 730px;        
         
-        overflow: hidden;
-        z-index: 0;
-
         background: var(--color-white);
         border-radius: 10px;
         box-shadow: 15px 30px 30px 10px #DBE4ED;
-
+        
+        
         @media (min-width: $breakpoint-tablet) {
             flex-direction: row;
             height: 346px;
             width: 608px; 
-            overflow: visible;
         }       
 
         @media (min-width: $breakpoint-desktop) {
@@ -53,26 +50,46 @@ main{
             width: 730px; 
             height: 280px;
         }       
-        
-        &__img{
-            object-fit: cover;
-            width: 100%;
-            flex-shrink: 0;
+
+        &__img-container{
+            width: 100%;            
             height: 200px; 
-            
+            border: 1px solid red;
+            overflow: hidden;
+            flex-shrink: 0;
             @media (min-width: $breakpoint-tablet) {
                 width: 229px;  
+                border: 1px solid orange;
                 height: 100%;
                 border-bottom-left-radius: 10px;
                 border-top-left-radius: 10px;
+
+                
             } 
             
             @media (min-width: $breakpoint-desktop) {
+                border: 1px solid cyan;
                 width: 285px;  
                 height: 100%;
             } 
         }
         
+        .card__img{
+            object-fit: cover;
+            width: 110%;
+            height: 100%;
+            transition: all .5s ease;
+
+            @media (min-width: $breakpoint-tablet) {
+                object-position: 40% center; 
+
+            }
+        }
+        
+        &:hover .card__img{
+            transform: scale(1.1);
+        }
+
         &__body{ 
             display: flex;
             flex-direction: column;
@@ -245,4 +262,4 @@ main{
 [hidden] {
     display: none !important;
 }
-
+ 
