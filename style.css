@@ -253,6 +253,12 @@ main .card .card-footer .share-menu {
           transform: translateY(100%);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 main .card .card-footer .share-menu.active {
   -webkit-transform: translateY(0);
@@ -274,6 +280,9 @@ main .card .card-footer .share-menu.active {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-transform: scale(0);
             transform: scale(0);
   }
@@ -306,9 +315,6 @@ main .card .card-footer .share-menu__label-and-icons {
   display: -ms-flexbox;
   display: flex;
   gap: var(--spacing-300);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 main .card .card-footer .share-menu__label {
   font-family: "Manrope", sans-serif;
@@ -330,6 +336,9 @@ main .card .card-footer .share-menu__icons {
 main .card .card-footer .share-menu__icons img {
   width: 20px;
   height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: var(--color-white);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
