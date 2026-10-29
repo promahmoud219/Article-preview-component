@@ -4,10 +4,11 @@ const shareMenu = document.getElementById("share-menu");
 openShareMenuBtn.addEventListener("click", openShareMenu);
 
 function openShareMenu(){
-    shareMenu.classList.toggle("active");     
+    const isOpen = shareMenu.classList.toggle("active");     
+    shareMenu.inert = !isOpen;
     openShareMenuBtn.setAttribute(
         "aria-expanded",
-        String(!shareMenu.hidden)
+        String(isOpen)
     );
 }
 

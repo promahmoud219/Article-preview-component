@@ -249,18 +249,24 @@ main .card .card-footer .share-menu {
   left: -32px;
   bottom: -16px;
   z-index: 5;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 main .card .card-footer .share-menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }

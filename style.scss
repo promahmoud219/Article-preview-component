@@ -185,12 +185,19 @@ main{
                 bottom: -16px;
 
                 z-index: 5;
-                transform: translateY(100%);
-                transition: all  .5s ease;
                 display: flex;
                 align-items: center;
-
+                 
+                transform: translateY(100%);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all  .5s ease;
+                 
                 &.active{
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
                     transform: translateY(0);
                 }
                 
