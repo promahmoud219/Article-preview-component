@@ -26,7 +26,7 @@ main{
     align-items: center;
     
     min-height: 100vh;
-    padding: 48px 0;
+    padding: var(--spacing-600) 0;
     
     .card{ 
         display: flex;
@@ -36,7 +36,7 @@ main{
         
         background: var(--color-white);
         border-radius: 10px;
-        box-shadow: 15px 30px 30px 10px #DBE4ED;
+        box-shadow: var(--spacing-200) var(--spacing-400) var(--spacing-400) var(--spacing-100) #DBE4ED;
         overflow: hidden;
         
         @media (min-width: $breakpoint-tablet) {
@@ -60,8 +60,8 @@ main{
             @media (min-width: $breakpoint-tablet) {
                 width: 229px;   
                 height: 100%;
-                border-bottom-left-radius: 10px;
-                border-top-left-radius: 10px; 
+                border-bottom-left-radius: var(--spacing-100);
+                border-top-left-radius: var(--spacing-100); 
             } 
             
             @media (min-width: $breakpoint-desktop) { 
@@ -88,25 +88,24 @@ main{
         &__body{ 
             display: flex;
             flex-direction: column;
-            gap: 48px;
-            padding: 32px;
-            padding-bottom: 16px;
+            gap: var(--spacing-600);
+            padding: var(--spacing-400);
+            padding-bottom: var(--spacing-200);
 
             @media (min-width: $breakpoint-tablet) {
-                padding: 47px 40px 40px 32px;
-                gap: 24px;
+                padding: var(--spacing-600) var(--spacing-500) var(--spacing-500) var(--spacing-400);
+                gap: var(--spacing-300);
             }
             
             @media (min-width: $breakpoint-desktop) {
-                // padding: 36px 43px 43px 40px;
-                padding: 32px 40px;
+                padding: var(--spacing-400) var(--spacing-500);
             }
         }
         
         &__content{
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: var(--spacing-300);
         }
         
         &__title{
@@ -125,16 +124,16 @@ main{
             justify-content: space-between; 
             align-items: center; 
             position: relative;
-            height: 40px; 
+            height: var(--spacing-500); 
 
             &__profile{ 
                 display: flex;
-                gap: 16px;
+                gap: var(--spacing-200);
             }
 
             &__img{
-                width: 40px;
-                height: 40px;
+                width: var(--spacing-500);
+                height: var(--spacing-500);
                 border-radius: 50%; 
             }
  
@@ -150,8 +149,8 @@ main{
             }
             
             .share-button{
-                width: 32px;
-                height: 32px;
+                width: var(--spacing-400);
+                height: var(--spacing-400);
                 border-radius: 50%;
                 border: none;
                 flex-shrink: 0;
@@ -177,7 +176,7 @@ main{
                 
                 width: calc(100% + 64px);
                 height: 76px;
-                padding: 24px 32px;
+                padding: var(--spacing-300) var(--spacing-400);
                 
                 position: absolute; 
                 left: -32px;
@@ -214,7 +213,7 @@ main{
                         left: 50%;
                         transform: translateX(-50%); 
                         
-                        border-width: 8px;
+                        border-width: var(--spacing-100);
                         border-style: solid;
                         border-color: var(--color-grey-900) transparent transparent transparent;
                     }
@@ -231,7 +230,7 @@ main{
                 
                 &__label-and-icons{
                     display: flex;
-                    gap: 24px;
+                    gap: var(--spacing-300);
                     align-items: center;
                 }
 
@@ -243,7 +242,7 @@ main{
                 &__icons{
                     display: flex;
                     align-items: center;
-                    gap: 16px;
+                    gap: var(--spacing-200);
                 }
 
                 &__close{

@@ -50,7 +50,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
-  padding: 48px 0;
+  padding: var(--spacing-600) 0;
 }
 main .card {
   display: -webkit-box;
