@@ -41,15 +41,15 @@ main{
         
         @media (min-width: $breakpoint-tablet) {
             flex-direction: row;
-            height: 346px;
-            width: 608px; 
+            height: $card-height-tablet;
+            width: $card-width-tablet; 
             overflow: visible;
         }       
 
         @media (min-width: $breakpoint-desktop) {
             flex-direction: row;
-            width: 730px; 
-            height: 280px;
+            width: $card-width-desktop; 
+            height: $card-height-desktop;
         }       
 
         &__img-container{
